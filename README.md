@@ -4,6 +4,6 @@ MAX приложение для помощи в поисках субсидий.
 ## Архитектура
 
 Проект поделен на 3 части:
-- `bot`: MAX бот, точка входа.
-- `web`: WebApp на React.
-- `api`: API на FastAPI.
+- [`bot`](bot): MAX бот, точка входа.
+- [`web`](web): WebApp на React.
+- [`api`](api): API на FastAPI.
