@@ -11,6 +11,7 @@ jobs:
             - name: Deploy via SSH
               uses: appleboy/ssh-action@v1
               with:
+                  capture_stdout: true
                   host: ${{secrets.VPS_HOST}}
                   username: ${{secrets.VPS_USER}}
                   key: ${{secrets.SSH_PRIVATE_KEY}}
@@ -18,8 +19,7 @@ jobs:
                       cd /opt/max-2026-pro-subsidii
                       git pull origin main
 
-                      cd web && \
-                      pnpm install && \
-                      pnpm ci && \
-                      pnpm build && \
+                      cd web
+                      pnpm install --frozen-lockfile
+                      pnpm build
                       cp -r dist/* /var/www/${{secrets.SITE_DOMAIN}}/
