@@ -1,5 +1,6 @@
 import type { Context } from "@maxhub/max-bot-api";
 import type { Update } from "@maxhub/max-bot-api/types";
+import { helloKeyboard } from "./keyboards.js";
 
 export async function sendHelloMessage(ctx: Context<Update>) {
     let full_name;
@@ -12,7 +13,9 @@ export async function sendHelloMessage(ctx: Context<Update>) {
         full_name = "Пользователь";
     }
 
-    ctx.reply(`Привет тебе, ${full_name}!`);
+    ctx.reply(`Привет тебе, ${full_name}!`, {
+        attachments: [helloKeyboard]
+    });
 }
 
 export async function sendHelpMessage(ctx: Context<Update>) {
