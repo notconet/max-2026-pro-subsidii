@@ -18,8 +18,8 @@ jobs:
                       cd /opt/max-2026-pro-subsidii
                       git pull origin main
 
-                      cd web
-                      pnpm install
-                      pnpm ci
-                      pnpm build
+                      cd web && \
+                      pnpm install && \
+                      pnpm ci && \
+                      pnpm build && \
                       cp -r dist/* /var/www/${{secrets.SITE_DOMAIN}}/
