@@ -1,20 +1,25 @@
 name: Deploy to VPS
 
 on:
-  push:
-    branches: [main]
+    push:
+        branches: [main]
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1
-        with:
-          host:  ${{secrets.VPS_HOST}}
-          username: ${{secrets.VPS_USER}}
-          key: ${{secrets.SSH_PRIVATE_KEY}}
-          script: |
-            cd /opt/max-2026-pro-subsidii
-            git pull origin main
-  
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy via SSH
+              uses: appleboy/ssh-action@v1
+              with:
+                  host: ${{secrets.VPS_HOST}}
+                  username: ${{secrets.VPS_USER}}
+                  key: ${{secrets.SSH_PRIVATE_KEY}}
+                  script: |
+                      cd /opt/max-2026-pro-subsidii
+                      git pull origin main
+
+                      cd web
+                      pnpm install
+                      pnpm ci
+                      pnpm build
+                      cp -r dist/* /var/www/${{secrets.SITE_DOMAIN}}/
