@@ -30,7 +30,8 @@ jobs:
                       cd /opt/max-2026-pro-subsidii
                       git pull origin main
 
-                      docker compose --file prod.docker-compose.yaml up --build -d
+                      export COMPOSE_FILE=prod.docker-compose.yaml
+                      docker compose up --build -d
 
                       cd web
                       pnpm install --frozen-lockfile
