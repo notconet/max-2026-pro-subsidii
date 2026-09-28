@@ -1,0 +1,3 @@
+import uvicorn
+
+uvicorn.run("src.app:app", host="0.0.0.0")

@@ -1,0 +1,10 @@
+services:
+  bot:
+    build: bot
+    environment:
+      BOT_TOKEN: ${BOT_TOKEN}
+
+  api:
+    build: api
+    ports:
+      - 3000:8000
