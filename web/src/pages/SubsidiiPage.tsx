@@ -1,15 +1,9 @@
-import { Typography } from "@maxhub/max-ui";
-import { parseInitData } from "../lib/parser";
+import PageHeading from '../components/PageHeading';
 
 export default function SubsiddiPage() {
-  const webApp = (window as any).WebApp;
-  console.log(webApp)
+    return <PageHeading text="Субсидии"></PageHeading>;
+}
 
-  const initData = parseInitData(webApp.initDataManager.rawInitData);
-
-  const _user = initData?.user;
-
-  return (
-    <Typography.Headline>Субсидии</Typography.Headline>
-  );
-};
+// <IconButton variant="ghost" style={{ color: 'inherit' }}>
+//     <PiPenBold size={24} />
+// </IconButton>

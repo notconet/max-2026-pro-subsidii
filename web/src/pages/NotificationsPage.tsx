@@ -1,5 +1,8 @@
 import { Typography } from '@maxhub/max-ui';
+import PageHeading from '../components/PageHeading';
 
 export default function NotificationsPage() {
-    return <Typography.Headline>Напоминания</Typography.Headline>;
+    return (
+        <PageHeading text="Напоминания"></PageHeading>
+    )
 }
