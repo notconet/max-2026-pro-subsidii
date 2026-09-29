@@ -8,8 +8,6 @@ const App = () => {
 
   const initData = parseInitData(webApp.initDataManager.rawInitData);
 
-  const user = initData?.user;
-
   return (
     <main>
         <Typography.Headline>Субсидии</Typography.Headline>
