@@ -5,6 +5,9 @@
     display: grid;
     place-items: center;
     background: var(--color-surface);
+}
+
+.loaded {
     animation: splash-dismiss 400ms ease-in 900ms forwards;
 }
 
@@ -37,7 +40,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .splash {
+    .loaded {
         animation-duration: 1ms;
         animation-delay: 0ms;
     }
