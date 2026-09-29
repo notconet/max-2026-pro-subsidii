@@ -7,7 +7,7 @@ export default function SubsiddiPage() {
 
   const initData = parseInitData(webApp.initDataManager.rawInitData);
 
-  const user = initData?.user;
+  const _user = initData?.user;
 
   return (
     <Typography.Headline>Субсидии</Typography.Headline>

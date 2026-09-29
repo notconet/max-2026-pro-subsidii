@@ -2,39 +2,35 @@ import { PiStackBold, PiBellBold, PiUserBold } from 'react-icons/pi';
 
 import styles from './NavBar.module.css';
 import { Ripple, Typography } from '@maxhub/max-ui';
-import { useState, type ReactNode } from 'react';
+import { Link } from '@tanstack/react-router';
+import type { ReactNode } from 'react';
 
-type Props = {};
-
-export default function NavBar({}: Props) {
-    const [activeIdx, setActiveIdx] = useState<number>(1);
-
+export default function NavBar() {
     const buttons = [
         {
             icon: <PiBellBold size={24} />,
             text: 'Напоминания',
-            onClick: () => setActiveIdx(0),
+            to: '/notifications',
         },
         {
             icon: <PiStackBold size={24} />,
             text: 'Субсидии',
-            onClick: () => setActiveIdx(1),
+            to: '/',
         },
         {
             icon: <PiUserBold size={24} />,
             text: 'Профиль',
-            onClick: () => setActiveIdx(2),
+            to: '/profile',
         },
-    ];
+    ] as const;
     return (
         <div className={styles.bar}>
-            {buttons.map((b, i) => (
+            {buttons.map((b) => (
                 <NavBarButton
-                    key={i}
-                    active={i == activeIdx}
+                    key={b.to}
                     icon={b.icon}
                     text={b.text}
-                    onClick={b.onClick}
+                    to={b.to}
                 />
             ))}
         </div>
@@ -42,21 +38,21 @@ export default function NavBar({}: Props) {
 }
 
 type ButtonProps = {
-    active: boolean;
     icon: ReactNode;
     text: string;
-    onClick: () => void;
+    to: '/' | '/profile' | '/notifications';
 };
 
-function NavBarButton({ active, icon, text, onClick }: ButtonProps) {
-    const classActive = active ? styles.active : '';
-    const className = `${styles.button} ${classActive}`;
+function NavBarButton({ icon, text, to }: ButtonProps) {
     return (
-        <button onClick={onClick} className={className}>
+        <Link
+            to={to}
+            className={styles.button}
+            activeProps={{ className: `${styles.button} ${styles.active}` }}
+        >
             <div className={styles.icon}>{icon}</div>
             <Typography.Label>{text}</Typography.Label>
-            <Ripple>
-            </Ripple>
-        </button>
+            <Ripple />
+        </Link>
     );
 }
