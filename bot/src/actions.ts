@@ -1,21 +1,13 @@
 import type { Context } from "@maxhub/max-bot-api";
 import type { Update } from "@maxhub/max-bot-api/types";
-import { helloKeyboard } from "./keyboards.js";
 
 export async function sendHelloMessage(ctx: Context<Update>) {
-    let full_name;
+    const message =
+        "Здравствуйте! Я чат-бот ПРО Субсидии.\n" +
+        "Я помогу вам в поиске субсидий для вашего бизнеса.\n" +
+        "Для начала работы - откройте Мини Приложение 👇";
 
-    if (ctx.user) {
-        const first_name = ctx.user.first_name;
-        const last_name = ctx.user.last_name;
-        full_name = first_name + " " + last_name;
-    } else {
-        full_name = "Пользователь";
-    }
-
-    ctx.reply(`Привет тебе, ${full_name}!`, {
-        attachments: [helloKeyboard]
-    });
+    ctx.reply(message);
 }
 
 export async function sendHelpMessage(ctx: Context<Update>) {

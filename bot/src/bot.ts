@@ -11,6 +11,22 @@ if (process.env.BOT_TOKEN === undefined) {
 
 const bot = new Bot(process.env.BOT_TOKEN);
 
+bot.api.setMyCommands([
+  {
+    name: 'start',
+    description: 'Подобрать субсидии',
+  },
+  {
+    name: 'help',
+    description: 'Справка'
+  },
+  {
+    name: 'remind',
+    description: 'Посмотреть напоминания'
+  }
+]);  
+
+
 registerHandles(bot);
 
 console.log("Bot starting up...");
