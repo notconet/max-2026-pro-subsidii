@@ -1,0 +1,60 @@
+.bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: start;
+  gap: 16px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 8px;
+  padding-left: 14px;
+  padding-right: 14px;
+  width: 100vw;
+  box-sizing: border-box;
+  border-top: 1px solid #E8EBF2;
+  color: #7B8499;
+  height: 76px;
+  overflow: hidden;
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: inherit;
+  width: 100%;
+  position: relative;
+}
+
+.button .icon {
+  color: #7B8499;
+}
+
+.button.active {
+  color: #625CFF;
+}
+
+.button.active .icon {
+  color: #625CFF;
+  animation: bump 0.5s ;
+}
+
+
+@keyframes bump {
+  0% {
+    scale: 1;
+  }
+
+  25% {
+    scale: 1.5; 
+  }
+  
+  100% {
+    scale: 1;
+  }
+}

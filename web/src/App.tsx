@@ -1,4 +1,6 @@
+import { Typography } from "@maxhub/max-ui";
 import { parseInitData } from "./lib/parser";
+import NavBar from "./components/NavBar";
 
 const App = () => {
   const webApp = (window as any).WebApp;
@@ -9,14 +11,10 @@ const App = () => {
   const user = initData?.user;
 
   return (
-    <>
-        {user && (
-            <div>
-                <h1>Hello {user?.first_name} {user?.last_name}</h1>
-                <img src={user.photo_url} alt="your avatar" />
-            </div>
-        )}
-    </>
+    <main>
+        <Typography.Headline>Субсидии</Typography.Headline>
+        <NavBar/>
+    </main>
   );
 };
 
