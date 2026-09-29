@@ -68,6 +68,7 @@ const App = () => {
           ))}
         </ul>
       )}
+      {webApp.initDataUnsafe}
     </Panel>
   );
 };
