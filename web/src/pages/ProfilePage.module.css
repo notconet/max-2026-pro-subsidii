@@ -1,14 +1,31 @@
-.avatarPanel {
-  padding: 32px;
-  border-radius: 16px;
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.historyPanel {
-  padding: 32px;
-  border-radius: 16px;
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 0 14px;
 }
 
-.savedPanel {
-  padding: 32px;
-  border-radius: 16px;
+.avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0;
+}
+
+.section,
+.savedList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sectionHeading {
+  color: var(--color-text-primary);
 }

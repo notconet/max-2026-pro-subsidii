@@ -1,3 +1,7 @@
 .layout {
     padding-bottom: calc(92px + env(safe-area-inset-bottom));
 }
+
+.fullscreen {
+    min-height: 100dvh;
+}
