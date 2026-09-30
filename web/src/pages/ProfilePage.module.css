@@ -1,4 +1,14 @@
-.panel {
+.avatarPanel {
+  padding: 32px;
+  border-radius: 16px;
+}
+
+.historyPanel {
+  padding: 32px;
+  border-radius: 16px;
+}
+
+.savedPanel {
   padding: 32px;
   border-radius: 16px;
 }

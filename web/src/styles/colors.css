@@ -1,6 +1,11 @@
 :root {
   --color-surface: #FFFFFF;
+  --color-text-primary: #1B2740;
   --color-border-subtle: #E8EBF2;
+  --color-border-accent: #DCD8FF;
   --color-text-muted: #7B8499;
   --color-accent: #625CFF;
+  --color-accent-soft: #F0EEFF;
+  --color-success: #2DBE7F;
+  --color-success-soft: #E8F8F0;
 }
