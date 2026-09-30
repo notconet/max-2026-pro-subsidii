@@ -1,13 +1,12 @@
 import { useRef, useState } from 'react';
-import { Link } from '@tanstack/react-router';
 import {
-    PiArrowLeftBold,
     PiBellRingingBold,
     PiCalendarDotsBold,
     PiCaretRightBold,
     PiClockBold,
 } from 'react-icons/pi';
 
+import PageHeading from '../components/PageHeading';
 import { subsidies } from '../lib/subsidies';
 import styles from './NotificationsPage.module.css';
 
@@ -36,16 +35,7 @@ export default function NotificationsPage() {
 
     return (
         <>
-            <header className={styles.header}>
-                <Link
-                    className={styles.backLink}
-                    to="/"
-                    aria-label="Назад к субсидиям"
-                >
-                    <PiArrowLeftBold aria-hidden="true" />
-                </Link>
-                <h1 className={styles.headerTitle}>Напоминание</h1>
-            </header>
+            <PageHeading text="Напоминание" />
             <div className={styles.page}>
                 <section className={styles.hero}>
                     <div className={styles.bellBadge} aria-hidden="true">
